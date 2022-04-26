@@ -31,10 +31,15 @@ namespace Objetos
             // retorna os valores de saldo e limite setados
             return this.Saldo + this.limite;
         }
+        
         public void Retirada(double valor)
         {
-            // retira valor do saldo setado
-            this.Saldo -= valor;
-        }
+            if (ConsultaSaldo() >= valor)
+            {
+                this.Saldo -= valor;
+            }
+            else Console.WriteLine("Erro");
+            
+       }
     }
 }
